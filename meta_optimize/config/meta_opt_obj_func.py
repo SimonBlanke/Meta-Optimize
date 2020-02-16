@@ -5,15 +5,9 @@
 
 import numpy as np
 from hyperactive import Hyperactive
-from .test_functions import (
-    sphere_function_search_config,
-    rastrigin_function_search_config,
-)
+from .test_functions import test_func_search_configs
 
-test_func_search_configs = [
-    sphere_function_search_config,
-    rastrigin_function_search_config,
-]
+
 n_iters = [10, 25, 33, 50, 75, 100]
 runs = range(10)
 
@@ -36,6 +30,6 @@ def hill_climbing(para, X, y):
 
                 loss_opt.append(opt.best_scores[list(search_config.keys())[0]])
 
-    score = np.array(loss_opt).sum()
+    score = np.array(loss_opt).mean()
 
     return score
