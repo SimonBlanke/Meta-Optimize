@@ -10,7 +10,7 @@ develop:
 	pip install -e .
 
 reinstall:
-	pip uninstall -y hyperactive
+	pip uninstall -y meta_optimize
 	rm -fr build dist meta_optimize.egg-info
 	python setup.py bdist_wheel
 	pip install dist/*
