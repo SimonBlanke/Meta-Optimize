@@ -9,7 +9,7 @@ from .test_functions import test_func_search_configs
 
 
 n_iters = [10, 25, 33, 50, 75, 100]
-runs = range(10)
+runs = range(3)
 
 
 def hill_climbing(para, X, y):
@@ -25,7 +25,7 @@ def hill_climbing(para, X, y):
     for i in runs:
         for n_iter in n_iters:
             for search_config in test_func_search_configs:
-                opt = Hyperactive(X, y, memory="short", random_state=i, verbosity=0)
+                opt = Hyperactive(X, y, memory="short", verbosity=0)
                 opt.search(search_config, n_iter=n_iter, optimizer=optimizer_config)
 
                 loss_opt.append(opt.best_scores[list(search_config.keys())[0]])
