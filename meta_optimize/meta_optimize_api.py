@@ -15,7 +15,14 @@ X, y = np.array([0]), np.array([0])
 
 
 class MetaOptimize:
-    def __init__(self, n_iter, max_time, optimizer, n_jobs, init_config):
+    def __init__(
+        self,
+        n_iter=10,
+        max_time=None,
+        optimizer="RandomSearch",
+        n_jobs=1,
+        init_config=None,
+    ):
         self.opt = Hyperactive(X, y, memory="short", verbosity=3)
 
         self.n_iter = n_iter
