@@ -4,12 +4,13 @@
 
 
 import numpy as np
+from functools import partial
 from hyperactive import Hyperactive
 from .test_functions import test_func_search_configs
 
 
 n_iters = [10, 25, 33, 50, 75, 100]
-runs = range(3)
+runs = range(10)
 
 
 def hill_climbing(para, X, y):
