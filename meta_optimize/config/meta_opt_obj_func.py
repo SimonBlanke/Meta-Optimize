@@ -17,7 +17,7 @@ def hill_climbing(para, X, y):
     optimizer_config = {
         "HillClimbing": {
             "epsilon": para["epsilon"],
-            "climb_dist": para["climb_dist"],
+            "distribution": para["distribution"],
             "n_neighbours": para["n_neighbours"],
         }
     }
